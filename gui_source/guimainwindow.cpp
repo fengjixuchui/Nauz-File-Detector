@@ -68,7 +68,7 @@ void GuiMainWindow::scanFile(QString sFileName)
 
         QString sSaveDirectory=nfdOptions.sLastDirectory+QDir::separator()+"result"; // mb TODO
 
-        ui->widgetResult->setData(&scanResult,sSaveDirectory);
+        ui->widgetResult->setData(scanResult,sSaveDirectory);
     }
 }
 
@@ -153,7 +153,7 @@ void GuiMainWindow::dropEvent(QDropEvent *event)
         {
             QString sFileName=urlList.at(0).toLocalFile();
 
-            sFileName=QBinary::convertFileName(sFileName);
+            sFileName=XBinary::convertFileName(sFileName);
 
             if(nfdOptions.bScanAfterOpen)
             {
